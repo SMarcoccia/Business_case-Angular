@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ButtonInfoHeaderComponent } from './button-info-header.component';
+import { ObligatoryMentionsComponent } from './obligatory-mentions.component';
 
-describe('ButtonInfoHeaderComponent', () => {
-  let component: ButtonInfoHeaderComponent;
-  let fixture: ComponentFixture<ButtonInfoHeaderComponent>;
+describe('ObligatoryMentionsComponent', () => {
+  let component: ObligatoryMentionsComponent;
+  let fixture: ComponentFixture<ObligatoryMentionsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ButtonInfoHeaderComponent ]
+      declarations: [ ObligatoryMentionsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ButtonInfoHeaderComponent);
+    fixture = TestBed.createComponent(ObligatoryMentionsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

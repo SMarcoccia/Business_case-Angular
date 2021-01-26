@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardCarComponent implements OnInit {
 
-  constructor() { }
+    carPath: string;
 
-  ngOnInit(): void {
-  }
+    constructor() { }
+
+    ngOnInit(): void {
+        this.carPath = "assets/img/cars/BMW/BMW-Série-1/BMW-Série-1.png";
+    }
 
 }

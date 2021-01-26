@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ButtonHomeHeaderComponent } from './button-home-header.component';
+import { InfoSiteComponent } from './info-site.component';
 
-describe('ButtonHomeHeaderComponent', () => {
-  let component: ButtonHomeHeaderComponent;
-  let fixture: ComponentFixture<ButtonHomeHeaderComponent>;
+describe('InfoSiteComponent', () => {
+  let component: InfoSiteComponent;
+  let fixture: ComponentFixture<InfoSiteComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ButtonHomeHeaderComponent ]
+      declarations: [ InfoSiteComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ButtonHomeHeaderComponent);
+    fixture = TestBed.createComponent(InfoSiteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,3 +1,11 @@
+import { UserGuard } from './services/security/guards/user/user.guard';
+import { AuthGuard } from './services/security/guards/auth/auth.guard';
+import { AuthService } from './services/security/auth/auth.service';
+import { ProfessionalService } from './services/professional/professional.service';
+import { ModelService } from './services/model/model.service';
+import { EnergyService } from './services/energy/energy.service';
+import { BrandService } from './services/brand/brand.service';
+import { AdService } from './services/ad/ad.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -12,8 +20,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PagingCarComponent } from './components/car/paging-car/paging-car.component';
 import { ResearchBarCarComponent } from './components/car/research-bar-car/research-bar-car.component';
 import { CardCarComponent } from './components/car/card-car/card-car.component';
-import { ButtonInfoHeaderComponent } from './components/header/button-info-header/button-info-header.component';
-import { ButtonHomeHeaderComponent } from './components/header/button-home-header/button-home-header.component';
+import { LogoHomeHeaderComponent } from './components/header/logo-home-header/logo-home-header.component';
 import { CardAccountHeaderComponent } from './components/header/card-account-header/card-account-header.component';
 import { KnowUsComponent } from './components/footer/info-site/know-us/know-us.component';
 import { UsedComponent } from './components/footer/info-site/used/used.component';
@@ -25,6 +32,12 @@ import { PrivacyPolicyComponent } from './components/footer/obligatory-mentions/
 import { IconsComponent } from './components/footer/icons/icons/icons.component';
 import { AuthViewComponent } from './views/auth/auth-view/auth-view.component';
 import { ErrorComponent } from './views/errors/error/error.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InfoPageHeaderComponent } from './components/header/info-page-header/info-page-header.component';
+import { InfoSiteComponent } from './components/footer/info-site/info-site.component';
+import { ObligatoryMentionsComponent } from './components/footer/obligatory-mentions/obligatory-mentions.component';
+
+
 
 
 @NgModule({
@@ -39,8 +52,6 @@ import { ErrorComponent } from './views/errors/error/error.component';
         PagingCarComponent,
         ResearchBarCarComponent,
         CardCarComponent,
-        ButtonInfoHeaderComponent,
-        ButtonHomeHeaderComponent,
         CardAccountHeaderComponent,
         KnowUsComponent,
         UsedComponent,
@@ -52,12 +63,27 @@ import { ErrorComponent } from './views/errors/error/error.component';
         IconsComponent,
         AuthViewComponent,
         ErrorComponent,
+        LogoHomeHeaderComponent,
+        InfoPageHeaderComponent,
+        InfoSiteComponent,
+        ObligatoryMentionsComponent,
     ],
     imports: [
         BrowserModule,
-        AppRoutingModule
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
-    providers: [],
+    providers: [
+        AdService, 
+        BrandService, 
+        EnergyService, 
+        ModelService, 
+        ProfessionalService, 
+        AuthService,
+        AuthGuard,
+        UserGuard,
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
