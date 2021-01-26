@@ -1,3 +1,27 @@
 nav{
     margin-top: 50px;
 }
+
+/* GLOBAL */
+
+.btn{
+    background-color: #007bff;
+    color: white !important;
+    font-size: 16px;
+    appearance: none; /*Supprime le style par défaut du select.*/
+    text-align: left;
+    border-radius: 3px;
+    border: 1px solid black;
+    width: 100%;
+}
+
+.btnSubmit{
+    background-color: red;
+    color: white !important;
+    font-size: 16px;
+    appearance: none;
+    border: none;
+    border-radius: 3px;
+    padding: 4px 0;
+    width: 100%;
+}

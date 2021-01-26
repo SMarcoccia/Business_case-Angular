@@ -1,3 +1,4 @@
+
 import { UserGuard } from './services/security/guards/user/user.guard';
 import { AuthGuard } from './services/security/guards/auth/auth.guard';
 import { AuthService } from './services/security/auth/auth.service';
@@ -9,6 +10,7 @@ import { AdService } from './services/ad/ad.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarsViewComponent } from './views/cars/cars-view/cars-view.component';
@@ -25,10 +27,6 @@ import { CardAccountHeaderComponent } from './components/header/card-account-hea
 import { KnowUsComponent } from './components/footer/info-site/know-us/know-us.component';
 import { UsedComponent } from './components/footer/info-site/used/used.component';
 import { ServicesComponent } from './components/footer/info-site/services/services.component';
-import { CguComponent } from './components/footer/obligatory-mentions/cgu/cgu.component';
-import { CgvComponent } from './components/footer/obligatory-mentions/cgv/cgv.component';
-import { LegalNoticeComponent } from './components/footer/obligatory-mentions/legal-notice/legal-notice.component';
-import { PrivacyPolicyComponent } from './components/footer/obligatory-mentions/privacy-policy/privacy-policy.component';
 import { IconsComponent } from './components/footer/icons/icons/icons.component';
 import { AuthViewComponent } from './views/auth/auth-view/auth-view.component';
 import { ErrorComponent } from './views/errors/error/error.component';
@@ -36,8 +34,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InfoPageHeaderComponent } from './components/header/info-page-header/info-page-header.component';
 import { InfoSiteComponent } from './components/footer/info-site/info-site.component';
 import { ObligatoryMentionsComponent } from './components/footer/obligatory-mentions/obligatory-mentions.component';
-
-
 
 
 @NgModule({
@@ -56,10 +52,6 @@ import { ObligatoryMentionsComponent } from './components/footer/obligatory-ment
         KnowUsComponent,
         UsedComponent,
         ServicesComponent,
-        CguComponent,
-        CgvComponent,
-        LegalNoticeComponent,
-        PrivacyPolicyComponent,
         IconsComponent,
         AuthViewComponent,
         ErrorComponent,
@@ -72,7 +64,8 @@ import { ObligatoryMentionsComponent } from './components/footer/obligatory-ment
         BrowserModule,
         AppRoutingModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        FontAwesomeModule,
     ],
     providers: [
         AdService, 

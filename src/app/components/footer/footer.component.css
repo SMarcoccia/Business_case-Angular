@@ -1,0 +1,91 @@
+ul{
+    list-style: none;
+}
+
+.btn{
+    background-color: blueviolet;
+    color: white !important;
+    font-size: 16px;
+    appearance: none; /*Supprime le style par défaut du select.*/
+    text-align: left;
+    border-radius: 3px;
+    border: 1px solid black;
+    width: 100%;
+  }
+  
+  .btnSubmit{
+    background-color: red;
+    color: white !important;
+    font-size: 16px;
+    appearance: none;
+    border: none;
+    border-radius: 3px;
+    padding: 4px 0;
+    width: 100%;
+  }
+
+/* FOOTER */
+
+footer{
+    background-color: #414E5F;
+    padding-bottom: 10px;
+  }
+  
+  footer section h2{
+    color: white;
+  }
+  
+  /* Title */
+  footer section div h2{
+    border-bottom: 1px solid black;
+  }
+  /* Fin title */
+  
+footer h3{
+    background-color: blueviolet;
+    border-radius: 3px;
+    border: 1px solid black;
+    font-size: 16px;
+    padding: 7px 0;
+    color: white;
+}
+  
+  #footer ul li ul li a{
+    color: white;
+  }
+  
+  #footer ul li ul li{
+    margin-bottom: 10px;
+  }
+  
+  footer section ul li ul li:hover{
+    outline : 1px solid black;
+    border-radius: 3px;
+    background-color: rgba(138,43,160, 0.75);
+  }
+  
+  footer section ul li .submenu{
+    margin-bottom: 5px;
+  }
+  footer section ul li .submenu a{
+    display: inline-block;
+    width: 100%;
+  }
+  
+  footer i{
+    margin: 10px 10px;
+    font-size: 24px;
+  }
+  
+  footer hr{
+    height: 1px;
+    background-color: white;
+  }
+  
+  footer #mentionObligatoire{
+    font-size: 12px;
+  }
+  
+  footer #mentionObligatoire ul li{
+    padding: 10px 0;
+  }
