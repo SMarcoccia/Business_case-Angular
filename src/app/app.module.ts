@@ -1,4 +1,5 @@
 
+import { HttpClientModule } from '@angular/common/http';
 import { UserGuard } from './services/security/guards/user/user.guard';
 import { AuthGuard } from './services/security/guards/auth/auth.guard';
 import { AuthService } from './services/security/auth/auth.service';
@@ -66,6 +67,7 @@ import { ObligatoryMentionsComponent } from './components/footer/obligatory-ment
         FormsModule,
         ReactiveFormsModule,
         FontAwesomeModule,
+        HttpClientModule,
     ],
     providers: [
         AdService, 

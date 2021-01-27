@@ -1,4 +1,6 @@
+import { BrandService } from './../../../services/brand/brand.service';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-research-bar-car',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResearchBarCarComponent implements OnInit {
 
-  constructor() { }
+    researchForm: FormGroup;
 
-  ngOnInit(): void {
-  }
+    constructor(
+        private brandService: BrandService,
+        private formeBuilder: FormBuilder,
+    ) { }
+
+    ngOnInit(): void {
+        this.brandService.getBrands();
+    }
+
+    onSubmitResearch(){
+        
+    }
 
 }
