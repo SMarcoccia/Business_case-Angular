@@ -1,27 +1,26 @@
+/* SLIDER RANGE */
+
+/* form  {
+    margin: 60px 0 0 0 !important;
+ } */
+ 
+/* .ui-slider .ui-btn-inner {
+    padding: 4px 0 0 0 !important;
+}
+ 
+.ui-slider-popup {
+    position: absolute !important;
+    width: 64px;
+    height: 64px;
+    text-align: center;
+    font-size: 36px;
+    padding-top: 14px;
+    z-index: 100;
+    opacity: 0.8;
+} */
+
 nav{
     margin-top: 50px;
 }
 
-/* GLOBAL */
 
-.btn{
-    background-color: #007bff;
-    color: white !important;
-    font-size: 16px;
-    appearance: none; /*Supprime le style par défaut du select.*/
-    text-align: left;
-    border-radius: 3px;
-    border: 1px solid black;
-    width: 100%;
-}
-
-.btnSubmit{
-    background-color: red;
-    color: white !important;
-    font-size: 16px;
-    appearance: none;
-    border: none;
-    border-radius: 3px;
-    padding: 4px 0;
-    width: 100%;
-}

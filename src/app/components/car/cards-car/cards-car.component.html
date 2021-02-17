@@ -1,0 +1,12 @@
+<div id="listCar" class="row justify-content-center">
+    <div *ngFor="let card of cards" class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{carImgPath + card.photos}}" alt="{{card.brand}} {{card.model}}">
+        <div class="card-body">
+            <h5 class="card-title">{{card.brand}} {{card.model}}</h5>
+            <p>{{card.price}} €</p>
+            <p>Année : {{card.year}}</p>
+            <a href="#" class="btn btnAnnounce text-center">Voir l'annonce</a>
+        </div>
+    </div>
+</div>
+

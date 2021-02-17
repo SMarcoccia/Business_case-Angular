@@ -1,0 +1,23 @@
+/* LIST CAR */
+
+a{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
+}
+
+.btnAnnounce{
+    text-shadow: none;
+}
+
+#listCar > div {
+    margin: 5px 5px;
+    border: 1px solid grey;
+    text-align: center;
+    background: white;
+    color: black;
+  }
+  
+#listCar div img{
+    height: auto;
+    width: auto;
+}

@@ -22,7 +22,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PagingCarComponent } from './components/car/paging-car/paging-car.component';
 import { ResearchBarCarComponent } from './components/car/research-bar-car/research-bar-car.component';
-import { CardCarComponent } from './components/car/card-car/card-car.component';
 import { LogoHomeHeaderComponent } from './components/header/logo-home-header/logo-home-header.component';
 import { CardAccountHeaderComponent } from './components/header/card-account-header/card-account-header.component';
 import { KnowUsComponent } from './components/footer/info-site/know-us/know-us.component';
@@ -35,7 +34,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InfoPageHeaderComponent } from './components/header/info-page-header/info-page-header.component';
 import { InfoSiteComponent } from './components/footer/info-site/info-site.component';
 import { ObligatoryMentionsComponent } from './components/footer/obligatory-mentions/obligatory-mentions.component';
-
+import { CardsCarComponent } from './components/car/cards-car/cards-car.component';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 @NgModule({
     declarations: [
@@ -48,7 +48,6 @@ import { ObligatoryMentionsComponent } from './components/footer/obligatory-ment
         FooterComponent,
         PagingCarComponent,
         ResearchBarCarComponent,
-        CardCarComponent,
         CardAccountHeaderComponent,
         KnowUsComponent,
         UsedComponent,
@@ -60,6 +59,7 @@ import { ObligatoryMentionsComponent } from './components/footer/obligatory-ment
         InfoPageHeaderComponent,
         InfoSiteComponent,
         ObligatoryMentionsComponent,
+        CardsCarComponent,
     ],
     imports: [
         BrowserModule,
@@ -68,6 +68,8 @@ import { ObligatoryMentionsComponent } from './components/footer/obligatory-ment
         ReactiveFormsModule,
         FontAwesomeModule,
         HttpClientModule,
+        NgxSliderModule,
+        FontAwesomeModule
     ],
     providers: [
         AdService, 

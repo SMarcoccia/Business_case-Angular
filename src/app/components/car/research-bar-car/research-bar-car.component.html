@@ -1,66 +1,59 @@
-<!-- <form 
-    [formGroup] = "researchForm"
-    (ngSubmit)="onSubmitResearch()">
-    <div class="container">
-        <div class="row justify-content-between my-1 py-3 px-4">
-        <div class="col-12 col-md-4 col-lg-2 my-2">
+<form 
+    [formGroup] = "carsForm"
+    (ngSubmit)="onSubmitSearchCars()">
+
+   <div class="row justify-content-between px-4">
+        <div class="form-group col-12 col-md-4 col-lg-2 my-2">
             <select 
-                class="btn" name="Mercedes" id="mark">
-            <option *ngFor= value="">Marque</option>
-            <option value="Renault">Renault</option>
-            <option value="BMW">BMW</option>
-            <option value="Peugeot">Peugeot</option>
-            <option value="Wolkswagen">Wolkswagen</option>
+                class="btn" (change)="onChangeRecoveryBrand($event)" formControlName="brandId" 
+                id="brand">
+                <option class="text-center" value="">Marque</option>
+                <option *ngFor="let brand of brands" [value]="brand.id">{{brand.brand}}</option>
             </select>
         </div>
-        <div class="col-12 col-md-4 col-lg-2 my-2">
-            <select class="btn" name="modele" id="model">
-            <option value="">Modèle</option>
-            <option value="xxx">xxx</option>
-            <option value="xxx">xxx</option>
-            <option value="xxx">xxx</option>
-            <option value="xxx">xxx</option>
+
+        <div class="form-group col-12 col-md-4 col-lg-2 my-2" id="model">
+            <select class="btn" formControlName="model"  >
+                <option class="text-center" value="">Modèle</option>
+                <option *ngFor="let modelByBrand of modelsByBrand" [value]="modelByBrand.model">
+                    {{modelByBrand.model}}
+                </option>
             </select>
         </div>
-        <div class="col-12 col-md-4 col-lg-2 my-2">
-            <select class="btn" name="energy" id="energy">
-            <option value="">Energie</option>
-            <option value="Essence">Essence</option>
-            <option value="Diesel">Diesel</option>
-            <option value="Electrique">Electrique</option>
-            <option value="Hybride">Hybride</option>
+        <div class="form-group col-12 col-md-4 col-lg-2 my-2">
+            <select class="btn" formControlName="energy" id="energy">
+            <option class="text-center" value="">Energie</option>
+            <option *ngFor="let energy of energies" [value]="energy.energy">
+                {{energy.energy}}
+            </option>
             </select>
-        </div>
-        <div class="col-12 col-md-4 col-lg-2 my-2">
-            <select class="btn" name="year" id="year">
-            <option value="">Année</option>
-            <option value="2020">2020</option>
-            <option value="2019">2019</option>
-            <option value="2018">2018</option>
-            <option value="2017">2017</option>
-            </select>
-        </div>
-        <div class="col-12 col-md-4 col-lg-2 my-2">
-            <select class="btn" name="kms" id="kms">
-            <option value="">Kms</option>
-            <option value="120 000">120 000</option>
-            <option value="110 000">110 000</option>
-            <option value="100 000">100 000</option>
-            <option value="90 000">90 000</option>
-            </select>
-        </div>
-        <div class="col-12 col-md-4 col-lg-2 my-2">
-            <select class="btn" name="price" id="price">
-            <option value="">Prix</option>
-            <option value="100 000$">100 000 $</option>
-            <option value="110 000$">110 000 $</option>
-            <option value="120 000$">120 000 $</option>
-            <option value="130 000$">130 000 $</option>
-            </select>
-        </div>
-        <div class="col-12 offset-md-4 col-md-4 offset-lg-5 col-lg-2 my-2">
-            <input class="btnSubmit" type="submit" value="Valider" />
-        </div>
-        </div>
+        </div> 
     </div>
-</form> -->
+
+    
+    <div class="custom-slider">
+        <label for="year">Années</label>
+        <ngx-slider id="year" [(value)]="minYear" [(highValue)]="maxYear" [options]="optionsYears"></ngx-slider>
+    </div>
+    
+    <div class="custom-slider">
+        <label for="kms">Kilomètres</label>
+        <ngx-slider id="kms" [(value)]="minKms" [(highValue)]="maxKms" [options]="optionsKms"></ngx-slider>
+    </div>
+    
+    <div class="custom-slider">
+        <label for="price">Prix</label>
+        <ngx-slider id="price" [(value)]="minPrice" [(highValue)]="maxPrice" [options]="optionsPrice"></ngx-slider>
+    </div>
+
+    <div class="form-group row justify-content-between px-4">
+        <button type="submit"
+            class="
+                col-12 offset-md-4 col-md-4 offset-lg-5 col-lg-2 my-2
+                btn btn-lg btn-dark btn-block text-uppercase
+                text-center
+            ">
+            Valider
+        </button>
+    </div>
+  </form>

@@ -9,25 +9,23 @@ import { BehaviorSubject } from 'rxjs';
 export class BrandService {
 
     apiUrl: string;
-    brands: Brand;
-    // brands: BehaviorSubject<Brand>;
+    brands: BehaviorSubject<Array<Brand>>;
 
 
     constructor(private httpClient: HttpClient) { 
         this.apiUrl = 'https://localhost:8000';
+        this.brands = new BehaviorSubject<Array<Brand>>(null);
     }
 
-    getBrands(){
+    getBrands(): void{
         this.httpClient
         .get(this.apiUrl + '/api/v1/marque')
         .subscribe(
             (res: any) => {
-                console.log(res);
                 const brands = res.map(item => {
                     return Brand.fromJSON(item);
                 });
-                this.brands = brands;
-                console.log(this.brands);
+                this.brands.next(brands);
             }
         );
     }

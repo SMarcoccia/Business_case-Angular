@@ -8,12 +8,13 @@ body{
     /* background: url("../img/bkg.jpg");
     background-size: cover;
     background-position: center; */
+    text-shadow: none;
   }
   
-  aside{
+aside{
     color: white;
-  }
-  
+}
+
 li{
     list-style: none;
 }
@@ -22,7 +23,7 @@ li{
     background-color: blueviolet;
     color: white !important;
     font-size: 16px;
-    appearance: none; /*Supprime le style par défaut du select.*/
+    appearance: none; 
     text-align: left;
     border-radius: 3px;
     border: 1px solid black;
@@ -33,8 +34,8 @@ li{
     background-color: red;
     color: white !important;
     font-size: 16px;
-    appearance: none;
-    border: none;
+    appearance: none; 
+    border: 1px solid black;;
     border-radius: 3px;
     padding: 4px 0;
     width: 100%;
@@ -147,15 +148,11 @@ header nav ul li img{
 
 /* FORM */
 
-main form{
-    background-color: black;
-}
-
 main form div div div{
     position: relative;
 }
 
-main form div div div:not(:last-child)::after{
+main form div div div:not(:nth-last-child(-n+4))::after{
     content: '';
     position: absolute;
     top: 12px;

@@ -1,13 +1,14 @@
 export class Brand{
     private _id: number;
-    private _marque: string;
+    private _brand: string;
 
-    constructor(marque: string, id: number){
+    constructor(brand: string, id?: number){
+
         if(typeof id === 'number'){
             this._id = id;
         }
 
-        this._marque = marque;
+        this._brand = brand;
     }
 
     public get id(): number {
@@ -17,15 +18,14 @@ export class Brand{
         this._id = value;
     }
 
-    public get marque(): string {
-        return this._marque;
+    public get brand(): string {
+        return this._brand;
     }
-    public set marque(value: string) {
-        this._marque = value;
+    public set brand(value: string) {
+        this._brand = value;
     }
 
     static fromJSON(data: any): Brand{
-        console.log(data);
         return new Brand(data.marque, data.id);
     }
 }
