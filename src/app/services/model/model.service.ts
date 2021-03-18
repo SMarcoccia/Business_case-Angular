@@ -23,18 +23,18 @@ export class ModelService {
         this.selectValueModel = new BehaviorSubject<boolean>(false);
     }
 
-    getModels(): void {
-        this.httpClient
-        .get(this.apiUrl + this.apiRoadModels)
-        .subscribe(
-            (res: any) => {
-                const models = res.map(item => {
-                    return Model.fromJSON(item);
-                });   
-                this.models.next(models);           
-            }
-        )
-    }
+    // getModels(): void {
+    //     this.httpClient
+    //     .get(this.apiUrl + this.apiRoadModels)
+    //     .subscribe(
+    //         (res: any) => {
+    //             const models = res.map(item => {
+    //                 return Model.fromJSON(item);
+    //             });   
+    //             this.models.next(models);           
+    //         }
+    //     )
+    // }
 
     getModelsByBrand(id: string): void {
         this.httpClient

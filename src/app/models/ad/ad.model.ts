@@ -1,37 +1,39 @@
+
 export class Ad {
 
     private _id: number;
     private _year: number;
     private _kms: number;
     private _price: number;
-    private _brand: string;
-    private _model: string;
-    private _energy: string;
+    private _brand: string | Object; 
+    private _model: string | Object; 
+    private _energy: string | Object; 
     private _reference: number;
-    private _photos: string | Array<string>;
+    private _photos: string | Array<Object>; 
     private _description: string;
     private _registration: string;
     private _guarantee: string;
-    private _characteristicValues: Array<string>;
     private _createdAt: Date;
+    private _updatedAt: Date;
 
 
     constructor(
         year: number,
         price: number,
-        brand: string,
-        model: string,
-        photos: string | Array<string>,
+        brand: string | Object,
+        model: string | Object,
+        photos: string | Array<Object>,
         kms?: number,
-        energy?: string,
+        energy?: string | Object,
         reference?: number,
         description?: string,
         registration?: string,
         guarantee?: string,
-        characteristicValues?: Array<string>,
         createdAt?: Date,
+        updatedAt?: Date,
         id?: number,
     ) {
+        
         this._year = year;
         this._kms = kms;
         this._price = price;
@@ -43,8 +45,8 @@ export class Ad {
         this._description = description;
         this._registration = registration;
         this._guarantee = guarantee;
-        this._characteristicValues = characteristicValues;
         this._createdAt = createdAt;
+        this._updatedAt = updatedAt;
         this._id = this.testId(id);
     }
 
@@ -60,24 +62,22 @@ export class Ad {
             data.prix,
             data.marque,
             data.modele,
-            data.photo,
+            data.photos,
             data.kilometrage,
             data.carburant,
             data.reference,
             data.description,
             data.immatriculation,
             data.garantie,
-            data.caracteristiqueValeurs,
             data.createdAt,
+            data.updatedAt,
             data.id,
         )
     }
 
+
     public get id(): number {
         return this._id;
-    }
-    public set id(value: number) {
-        this._id = value;
     }
 
     public get year(): number {
@@ -99,6 +99,27 @@ export class Ad {
     }
     public set price(value: number) {
         this._price = value;
+    }
+
+    public get brand(): string | Object {
+        return this._brand;
+    }
+    public set brand(value: string | Object) {
+        this._brand = value;
+    }
+
+    public get model(): string | Object  {
+        return this._model;
+    }
+    public set model(value: string | Object ) {
+        this._model = value;
+    }
+
+    public get energy(): string | Object {
+        return this._energy;
+    }
+    public set energy(value: string | Object) {
+        this._energy = value;
     }
 
     public get description(): string {
@@ -129,38 +150,10 @@ export class Ad {
         this._createdAt = value;
     }
 
-    public get brand(): string {
-        return this._brand;
-    }
-    public set brand(value: string) {
-        this._brand = value;
-    }
-
-    public get model(): string {
-        return this._model;
-    }
-    public set model(value: string) {
-        this._model = value;
-    }
-
-    public get characteristicValues(): Array<string> {
-        return this._characteristicValues;
-    }
-    public set characteristicValues(value: Array<string>) {
-        this._characteristicValues = value;
-    }
-
-    public get energy(): string {
-        return this._energy;
-    }
-    public set energy(value: string) {
-        this._energy = value;
-    }
-
-    public get photos(): string | Array<any> {
+    public get photos(): string | Array<Object> {
         return this._photos;
     }
-    public set photos(value: string | Array<any>) {
+    public set photos(value: string | Array<Object>) {
         this._photos = value;
     }
 
@@ -169,6 +162,13 @@ export class Ad {
     }
     public set guarantee(value: string) {
         this._guarantee = value;
+    }
+
+    public get updatedAt(): Date {
+        return this._updatedAt;
+    }
+    public set updatedAt(value: Date) {
+        this._updatedAt = value;
     }
 }
 

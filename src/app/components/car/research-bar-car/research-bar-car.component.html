@@ -13,9 +13,10 @@
         </div>
 
         <div class="form-group col-12 col-md-4 col-lg-2 my-2" id="model">
-            <select class="btn" formControlName="model"  >
+            <select class="btn" formControlName="model">
                 <option class="text-center" value="">Modèle</option>
                 <option *ngFor="let modelByBrand of modelsByBrand" [value]="modelByBrand.model">
+                    <!--Mettre l'id du model idem pr energy-->
                     {{modelByBrand.model}}
                 </option>
             </select>

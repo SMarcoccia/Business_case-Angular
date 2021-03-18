@@ -13,9 +13,6 @@ export class Energy{
     public get id(): number {
         return this._id;
     }
-    public set id(value: number) {
-        this._id = value;
-    }
 
     public get energy(): String {
         return this._energy;

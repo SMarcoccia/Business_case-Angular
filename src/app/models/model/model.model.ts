@@ -1,31 +1,26 @@
+import { Energy } from './../energy/energy.model';
+import { Brand } from './../brand/brand.model';
+
 
 export class Model{
+
     private _id: number;
     private _model: String;
-    private _brandId: number;
-    private _energyId: number;
+    private _brand: Brand;
+    private _energy: Energy;
 
-    constructor(model: string, id?: number, brandId?: number, energyId?: number){
+
+    constructor(model: string, id?: number, brand?: Brand, energy?: Energy){
         if(typeof id === 'number'){
             this._id = id;
         }
 
-        if(typeof brandId === 'number'){
-            this._brandId = brandId;
-        }
-
-        if(typeof energyId === 'number'){
-            this._energyId = energyId;
-        }
-
         this._model = model;
+        this._brand = brand;
     }
 
     public get id(): number {
         return this._id;
-    }
-    public set id(value: number) {
-        this._id = value;
     }
 
     public get model(): String {
@@ -35,18 +30,18 @@ export class Model{
         this._model = value;
     }
 
-    public get brandId(): number {
-        return this._brandId;
+    public get brand(): Brand {
+        return this._brand;
     }
-    public set brandId(value: number) {
-        this._brandId = value;
+    public set brand(value: Brand) {
+        this._brand = value;
     }
 
-    public get energyId(): number {
-        return this._energyId;
+    public get energy(): Energy {
+        return this._energy;
     }
-    public set energyId(value: number) {
-        this._energyId = value;
+    public set energy(value: Energy) {
+        this._energy = value;
     }
 
     static fromJSON(data: any): Model {

@@ -11,8 +11,11 @@ export class AdService {
     apiUrl: string = 'https://localhost:8000';
     apiRoadAdsHome: string = '/api/v1/home';
     apiRoadAds: string = '/api/v1/annonces';
+    apiRoadAd: string = '/api/v1/annonce';
 
     ads: BehaviorSubject<Array<Ad>>;
+
+    // ad: BehaviorSubject<Ad>;
 
     criteriaCarsBehSub: BehaviorSubject<Map<string, string>>;
 
@@ -20,6 +23,7 @@ export class AdService {
 
     constructor(private httpClient: HttpClient) { 
         this.ads = new BehaviorSubject<Array<Ad>>(null);
+        // this.ad = new BehaviorSubject<Ad>(null);
         this.nbPages = new BehaviorSubject<Array<number>>(null);
         this.criteriaCarsBehSub = new BehaviorSubject<Map<string, string>>(null);
     }
@@ -68,8 +72,9 @@ export class AdService {
         .subscribe(
             (res: any) => {
                 const ads = res.data.map(item => {
-                    return Ad.fromJSON(item);
-                });
+                        return Ad.fromJSON(item);
+                    }
+                );
 
                 this.ads.next(ads);
 
@@ -85,13 +90,19 @@ export class AdService {
     /**
      * Détail d'une annonce.
      */
-    getAd(): Promise<void | string> {
-        return new Promise<void | string>(
-            (res, rej) => {
-
+    getAd(id: number): Promise<void | any> {
+        return new Promise<void | any>(
+            (resolve, rej) => {
+                this.httpClient
+                .get(this.apiUrl + this.apiRoadAd + '/' + id)
+                .subscribe(
+                    (res: any) => {
+                        const ad = Ad.fromJSON(res.data);
+                        // this.ad.next(ad);
+                        resolve(ad);
+                    }
+                );
             }
         )
-        // this.httpClient
-        // .get(this.apiUrl + this.apiRoadAd)
     }
 }

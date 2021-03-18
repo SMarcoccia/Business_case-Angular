@@ -1,1 +1,56 @@
-<p>auth-view works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+    
+                    <h5 class="card-title text-center">Connexion</h5>
+                    
+                    <!-- <div class="alert-danger" *ngIf="errorMsg">
+                    {{ errorMsg }}
+                    </div> -->
+
+                    <form 
+                        #authForm="ngForm" 
+                        (ngSubmit)="onSubmitSignIn(authForm)" 
+                        class="form-signin">
+        
+                    <input
+                            class="form-control"
+                            id="inputEmail"
+                            name="email"
+                            ngModel
+                            placeholder="Adresse mail"
+                            required
+                            type="email"
+                            autofocus>
+                    <br>
+                    <input 
+                            class="form-control"
+                            id="inputPassword"
+                            name="password"
+                            placeholder="Mot de passe"
+                            ngModel
+                            required
+                            type="password">
+                    <br>
+                    <button class="btn btn-lg btn-dark btn-block text-uppercase text-center"
+                            type="submit"
+                            [disabled]="authForm.invalid">
+                            connexion
+                    </button>
+                    </form>
+                </div>
+                <div class="card-body text-center">
+                    <h5>Nouveau professionnel</h5>
+                    <a
+                        *ngIf="true"
+                        class="p-2 btn btn-dark text-uppercase text-center"
+                        routerLink="/contact">
+                        nous contacter
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

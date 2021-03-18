@@ -1,1 +1,17 @@
-<p>single-car-view works!</p>
+<div *ngIf="cardAd">
+<p>marque : {{cardAd.brand['marque']}}</p> 
+<p>createdAt : {{cardAd.createdAt | date: 'dd/MM/yyyy'}}</p>
+<p>description : {{cardAd.description}}</p>
+<p>energy : {{cardAd.energy['carburant']}}</p>
+<p>guarantee : {{cardAd.guarantee}}</p>
+<p>id : {{cardAd.id}}</p>
+<p>kms : {{cardAd.kms}}</p>
+<p *ngFor="let caracteristique of cardAd.model['caracteristiqueValeurs']">{{caracteristique.caracteristique['caracteristique']}} : {{caracteristique['valeur']}}</p>
+<img *ngFor="let photo of cardAd.photos" src="{{carImgPath + photo.emplacement}}" alt="{{carImgPath + photo.emplacement}}">
+<p>price : {{cardAd.price}}</p>
+<p>reference : {{cardAd.reference}}</p>
+<p>registration : {{cardAd.registration}}</p>
+<p>year : {{cardAd.year}}</p>
+<a routerLink="/" class="btn btnAnnounce text-center">Retour à l'accueil</a>
+</div>
+<!-- A METTRE LES BONNES VALEURS-->
