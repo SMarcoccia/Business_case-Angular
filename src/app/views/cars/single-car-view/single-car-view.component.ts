@@ -22,6 +22,7 @@ export class SingleCarViewComponent implements OnInit {
         this.adService.getAd( + (this.route.snapshot.params.id))
         .then((res) =>  {
             this.cardAd = res;
+            console.log(this.cardAd);
         })
         .catch(() => {
             

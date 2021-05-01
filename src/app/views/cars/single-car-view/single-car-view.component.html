@@ -1,17 +1,46 @@
-<div *ngIf="cardAd">
-<p>marque : {{cardAd.brand['marque']}}</p> 
-<p>createdAt : {{cardAd.createdAt | date: 'dd/MM/yyyy'}}</p>
-<p>description : {{cardAd.description}}</p>
-<p>energy : {{cardAd.energy['carburant']}}</p>
-<p>guarantee : {{cardAd.guarantee}}</p>
-<p>id : {{cardAd.id}}</p>
-<p>kms : {{cardAd.kms}}</p>
-<p *ngFor="let caracteristique of cardAd.model['caracteristiqueValeurs']">{{caracteristique.caracteristique['caracteristique']}} : {{caracteristique['valeur']}}</p>
-<img *ngFor="let photo of cardAd.photos" src="{{carImgPath + photo.emplacement}}" alt="{{carImgPath + photo.emplacement}}">
-<p>price : {{cardAd.price}}</p>
-<p>reference : {{cardAd.reference}}</p>
-<p>registration : {{cardAd.registration}}</p>
-<p>year : {{cardAd.year}}</p>
-<a routerLink="/" class="btn btnAnnounce text-center">Retour à l'accueil</a>
+<app-research-bar-car></app-research-bar-car>
+<div *ngIf="cardAd" class="container">
+    <div class="row mt-5">
+        <div class="col-6">
+            <img *ngFor="let photo of cardAd.photos" src="{{carImgPath + photo.emplacement}}" alt="{{carImgPath + photo.emplacement}}">
+        </div>
+        <div class="col-6 justify-content-center">
+            <div>
+                <p>Prix de vente {{cardAd.price}} €</p>
+            </div>
+            <div>
+                <p> 
+                    {{cardAd.brand['marque']}}<br>
+                    {{cardAd.model['modele']}}<br>
+                    <span class="upercase">mise en circulation</span>
+                    {{cardAd.createdAt | date: 'dd/MM/yyyy'}}<br>
+                    <span class="upercase">kilométrage</span>
+                    {{cardAd.kms}}<br>
+                    <span class="upercase">carburant</span>
+                    {{cardAd.energy['carburant']}}<br>
+                    <span class="upercase">garantie</span>
+                    {{cardAd.guarantee}}
+                </p>
+            </div>
+            <div>
+                <p>C'entre'Auto'Ccas <br> 109 allée du Codage <br> 42000 Les Bons Codeurs <br> 06 42 42 42 42 42</p>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-6">
+            <p>{{cardAd.description}}</p>
+        </div>
+        <div class="col-6">
+            <span *ngFor="let caracteristique of cardAd.model['caracteristiqueValeurs']">{{caracteristique.caracteristique['caracteristique']}} : {{caracteristique['valeur']}}<br></span>
+            <span>reference de l'annonce : {{cardAd.reference}}</span><br>
+            <span>Immatriculation : {{cardAd.registration}}</span>
+        </div>
+    </div>
+    <div class="row my-5">
+        <div class="offset-5 col-2">
+            <a routerLink="/" class="btn btnAnnounce text-center">Accueil</a>
+        </div>
+    </div>
 </div>
 <!-- A METTRE LES BONNES VALEURS-->

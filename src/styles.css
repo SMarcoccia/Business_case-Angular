@@ -185,16 +185,15 @@ main form div div div:not(:nth-last-child(-n+4))::after{
     footer section ul li:hover .submenu{
       display: block;
     }
-  
+
     /* HEADER */
     header nav ul li:nth-of-type(1){
-      display: none;
+        display: none;
     }
     
     header nav {
-      margin: 0 20px;
+        margin: 0 20px;
     }
-    
-    /* SELECTION */
   
   }
+

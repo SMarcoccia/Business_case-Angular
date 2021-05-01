@@ -75,6 +75,24 @@ export class Ad {
         )
     }
 
+    static toJSON(ad: Ad): any {
+        return {
+            annee: ad.year,
+            prix: ad.kms,
+            marque: ad.price,
+            modele: ad.brand,
+            photos: ad.model,
+            kilometrage: ad.energy,
+            carburant: ad.reference,
+            reference: ad.photos,
+            description: ad.description,
+            immatriculation: ad.registration,
+            garantie: ad.guarantee,
+            createdAt: ad.createdAt,
+            updatedAt: ad.updatedAt,
+            id: ad.id,
+        };
+      }
 
     public get id(): number {
         return this._id;

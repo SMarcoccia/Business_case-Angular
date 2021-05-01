@@ -63,21 +63,18 @@ export class AdService {
     }
 
     /**
-     * Pour la home : affiche les voitures date d'annonce de la plus récente à la plus ancienne.
+     * For the home: displays the cars with the announcement date from the most 
+     * recent to the oldest. 
      */
     getAds(numeroPage: number): void {
-
         this.httpClient
         .get(this.apiUrl + this.apiRoadAdsHome + "?page=" + numeroPage)
         .subscribe(
             (res: any) => {
                 const ads = res.data.map(item => {
-                        return Ad.fromJSON(item);
-                    }
-                );
-
+                    return Ad.fromJSON(item);
+                });
                 this.ads.next(ads);
-
                 const array = [];
                 for(let i=1; i <= res.nbPages; i++){
                     array.push(i);

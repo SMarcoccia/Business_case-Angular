@@ -36,6 +36,7 @@ import { InfoSiteComponent } from './components/footer/info-site/info-site.compo
 import { ObligatoryMentionsComponent } from './components/footer/obligatory-mentions/obligatory-mentions.component';
 import { CardsCarComponent } from './components/car/cards-car/cards-car.component';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { AccountViewComponent } from './views/account/account-view/account-view.component';
 
 @NgModule({
     declarations: [
@@ -60,6 +61,7 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
         InfoSiteComponent,
         ObligatoryMentionsComponent,
         CardsCarComponent,
+        AccountViewComponent,
     ],
     imports: [
         BrowserModule,

@@ -1,16 +1,29 @@
-<!-- <button
-    *ngIf="true"
-    class="p-2 btn btn-dark"
-    (click)="onClickSignOut()">
-    Professionnel
-</button> -->
 
-<a
-    *ngIf="true"
-    class="p-2 btn btn-dark"
-    routerLink="/login">
-    <!-- Mon compte -->
-    Professionnel
-</a>
+<div class="d-flex row">
+    <a
+        class="p-2 btn btn-dark professional"
+        *ngIf='connected == null'
+        routerLink="/login">
+        Professionnel
+    </a>
+
+    <a
+        class="p-2 btn btn-dark col-8 account"
+        *ngIf='connected != null'
+        routerLink="/account">
+        Mon compte
+    </a>
+
+    <a
+        *ngIf='connected != null'
+        class="logout btn btn-dark col-4 text-center account"
+        (click)="onClickSignOut()"
+        >
+        x
+    </a>
+</div>
+
+
+
 
 

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 import { Injectable } from '@angular/core';
 
@@ -6,44 +7,50 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 
-    isAuth: BehaviorSubject<boolean>;
+    static token: string; 
+    apiUrl: string = 'https://localhost:8000';
+    apiRoadAds: string = '/api';
+    connected: BehaviorSubject<string>;
 
-    constructor(private userService: UserService) { 
-        this.isAuth = new BehaviorSubject<boolean>(false);
+    constructor(private httpClient: HttpClient) {
+        this.connected = new BehaviorSubject<string>(null);
     }
 
-    signIn(email: string, password: string): Promise<void|string>{
-        // Attends que le promesse soit résolue ou rejeté res (résolue), rej (rejeté) 
-        return new Promise<void|string>((res, rej) => {
-            // Simule le server.
-            setTimeout(() => {
-                // On simule que le user est authentifier.
-                if(email === "anakin@yahoo.fr" && password === '0002'){
-                    this.userService.updateUser(
-                        new User('Thomas', 'CHEVALIER', 'tchevalier@humanbooster.com', 'azerty')
-                    )
-                    this.isAuth.next(true);
+    /**
+     * 
+     * @param email 
+     * @param password 
+     * @returns {}
+     */
+    
+    signIn(email: string, password: string): Promise<string>{
+        return new Promise<string>(
+            (res, rej) => {
+            this.httpClient.post(
+                this.apiUrl + this.apiRoadAds + '/login_check',
+                {username: email, password: password},
+            )
+            .subscribe(
+                (token: string) => {
+                    AuthService.token = token['token'];
+                    this.connected.next(AuthService.token);
 
-                    res();
+                    if(AuthService.token)
+                        res("L'authentification à réussi !");
+                    else
+                        rej("Les identifiants ne sont pas correct");
                 }
-                else {
-                    rej('Les identifiants ne sont pas correctes');
-                }
-            },
-            1000 // Permet de simuler l'attente de la réponse et pendant se temps on met un chargement.
-            );
-        });
+            )
+         });
     }
 
-signOut(): Promise<void>{
-    return new Promise<void>((res, rej) => {
-            // Ici on appel une api dc on utilise la promesse qui 
-            // attendra le retour d'une réponse de l'api.
-            this.isAuth.next(false);
-            // res permet de renvoyer la valeur de this.isAuth.
-            // C'est comme le .emit renvoi une valeur au parent. 
-            res();
-        }
-    );
-}
+    signOut(): Promise<string>{
+        return new Promise<string>(
+            (res, rej) => {
+                AuthService.token = null;
+                this.connected.next(AuthService.token);
+                res("Vous êtes déconnecté.");
+            }
+        );
+    }
 }
